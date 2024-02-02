@@ -14,8 +14,8 @@
 </head>
 <body>
   <header>
-    <label class="hamburger-icon">
-      <input type="checkbox">
+    <label class="hamburger-icon" id="hamburger">
+      <input type="checkbox" id="menuCheckbox">
     </label>
     <div class="nav-menu">
       <nav>
@@ -93,5 +93,17 @@
       </div>
     </section>
   </main>
+  <script>
+    document.addEventListener('click', function(event) {
+      var checkboxContainer = document.getElementById('hamburger');
+      var checkbox = document.getElementById('menuCheckbox');
+
+      // Check if the clicked element is not inside the checkbox container
+      if (!checkboxContainer.contains(event.target)) {
+        // Uncheck the checkbox
+        checkbox.checked = false;
+      }
+    });
+  </script>
 </body>
 </html>
